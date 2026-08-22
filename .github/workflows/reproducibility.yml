@@ -1,0 +1,23 @@
+name: Reproducibility checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python-verification:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e .
+      - run: python -m compileall -q known_visit_sim scripts
+      - run: python -m unittest discover -s known_visit_sim/tests -v
+      - run: python scripts/run_target_load_horizon_pilot.py --plan-only > campaign_plan.txt
+      - run: python scripts/verify_release.py
+      - run: python scripts/smoke_study.py

@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commitment-horizon-study"
+version = "1.0.0"
+description = "Reproducible CV simulator and results for commitment-horizon target-load tuning"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "James Lott"}]
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["known_visit_sim*"]

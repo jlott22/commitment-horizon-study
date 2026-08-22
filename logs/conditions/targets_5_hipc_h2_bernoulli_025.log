@@ -1,0 +1,29 @@
+
+[2026-08-21T23:29:05+00:00] START ["C:\\Users\\lottj\\AppData\\Local\\Programs\\Python\\Python313\\python.exe", "-m", "known_visit_sim.run_trials", "--scenario-file", "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t5_n25.csv", "--algorithm", "known_visit_sim.algorithms.HIPC:HIPCAllocator", "--algorithm-name", "HIPC", "--grid-size", "19", "--num-robots", "4", "--robot-start-layout", "edge_even", "--condition-id", "targets_5_hipc_h2_bernoulli_025", "--seed", "0", "--out-dir", "objective_tuning_target_load_pilot_25/results/raw/targets_5/h2/bernoulli/targets_5_hipc_h2_bernoulli_025", "--max-trials", "25", "--commitment-horizon", "2", "--comm-model", "bernoulli", "--debug-max-events", "5000", "--comm-level", "0.25"]
+completed trial 0: targets=5/5 steps=49
+completed trial 1: targets=5/5 steps=51
+completed trial 2: targets=5/5 steps=36
+completed trial 3: targets=5/5 steps=62
+completed trial 4: targets=5/5 steps=66
+completed trial 5: targets=5/5 steps=41
+completed trial 6: targets=5/5 steps=44
+completed trial 7: targets=5/5 steps=46
+completed trial 8: targets=5/5 steps=39
+completed trial 9: targets=5/5 steps=45
+completed trial 10: targets=5/5 steps=38
+completed trial 11: targets=5/5 steps=29
+completed trial 12: targets=5/5 steps=65
+completed trial 13: targets=5/5 steps=40
+completed trial 14: targets=5/5 steps=66
+completed trial 15: targets=5/5 steps=56
+completed trial 16: targets=5/5 steps=47
+completed trial 17: targets=5/5 steps=51
+completed trial 18: targets=5/5 steps=35
+completed trial 19: targets=5/5 steps=37
+completed trial 20: targets=5/5 steps=43
+completed trial 21: targets=5/5 steps=44
+completed trial 22: targets=5/5 steps=66
+completed trial 23: targets=5/5 steps=43
+completed trial 24: targets=5/5 steps=39
+outputs written to objective_tuning_target_load_pilot_25/results/raw/targets_5/h2/bernoulli/targets_5_hipc_h2_bernoulli_025
+[2026-08-21T23:29:08+00:00] EXIT 0

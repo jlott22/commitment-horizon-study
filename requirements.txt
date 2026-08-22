@@ -1,0 +1,2 @@
+# The CV simulator uses only Python's standard library.
+# Install the local package with: python -m pip install -e .

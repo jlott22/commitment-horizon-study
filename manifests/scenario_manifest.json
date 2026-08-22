@@ -1,0 +1,83 @@
+{
+  "generated_or_verified_utc": "2026-08-21T23:20:37+00:00",
+  "scenario_generator": "known_visit_sim.generate_scenarios.generate",
+  "scenario_seed_convention": {
+    "20_targets": 2026082120,
+    "5_targets": 2026082105,
+    "existing_10_target_campaign": 0
+  },
+  "scenarios": {
+    "5": {
+      "generation_seed": 2026082105,
+      "grid_size": 19,
+      "path": "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t5_n25.csv",
+      "robot_count": 4,
+      "robot_start_layout": "edge_even",
+      "sha256": "e4ebd836af9857813608ca9f91cfef30ea406653734842494b8720b8bab73606",
+      "target_count": 5,
+      "trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    "20": {
+      "generation_seed": 2026082120,
+      "grid_size": 19,
+      "path": "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t20_n25.csv",
+      "robot_count": 4,
+      "robot_start_layout": "edge_even",
+      "sha256": "b882d6da9ec23e371fca810ab01e04731a66315cbbefab64c331478fae6dffab",
+      "target_count": 20,
+      "trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    }
+  }
+}

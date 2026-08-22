@@ -1,0 +1,29 @@
+
+[2026-08-21T23:30:31+00:00] START ["C:\\Users\\lottj\\AppData\\Local\\Programs\\Python\\Python313\\python.exe", "-m", "known_visit_sim.run_trials", "--scenario-file", "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t20_n25.csv", "--algorithm", "known_visit_sim.algorithms.HIPC:HIPCAllocator", "--algorithm-name", "HIPC", "--grid-size", "19", "--num-robots", "4", "--robot-start-layout", "edge_even", "--condition-id", "targets_20_hipc_h12_ideal", "--seed", "0", "--out-dir", "objective_tuning_target_load_pilot_25/results/raw/targets_20/h12/ideal/targets_20_hipc_h12_ideal", "--max-trials", "25", "--commitment-horizon", "12", "--comm-model", "ideal", "--debug-max-events", "5000"]
+completed trial 0: targets=20/20 steps=82
+completed trial 1: targets=20/20 steps=66
+completed trial 2: targets=20/20 steps=72
+completed trial 3: targets=20/20 steps=77
+completed trial 4: targets=20/20 steps=78
+completed trial 5: targets=20/20 steps=82
+completed trial 6: targets=20/20 steps=89
+completed trial 7: targets=20/20 steps=92
+completed trial 8: targets=20/20 steps=70
+completed trial 9: targets=20/20 steps=88
+completed trial 10: targets=20/20 steps=72
+completed trial 11: targets=20/20 steps=82
+completed trial 12: targets=20/20 steps=82
+completed trial 13: targets=20/20 steps=89
+completed trial 14: targets=20/20 steps=76
+completed trial 15: targets=20/20 steps=99
+completed trial 16: targets=20/20 steps=69
+completed trial 17: targets=20/20 steps=87
+completed trial 18: targets=20/20 steps=79
+completed trial 19: targets=20/20 steps=76
+completed trial 20: targets=20/20 steps=71
+completed trial 21: targets=20/20 steps=71
+completed trial 22: targets=20/20 steps=70
+completed trial 23: targets=20/20 steps=74
+completed trial 24: targets=20/20 steps=83
+outputs written to objective_tuning_target_load_pilot_25/results/raw/targets_20/h12/ideal/targets_20_hipc_h12_ideal
+[2026-08-21T23:30:52+00:00] EXIT 0

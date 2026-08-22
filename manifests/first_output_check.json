@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-08-21T23:20:38+00:00",
+  "checks": [
+    "condition=targets_5_dmchba_h1_bernoulli_025",
+    "target_count=5",
+    "algorithm=DMCHBA",
+    "horizon=1",
+    "communication=bernoulli_025",
+    "required CSV columns present",
+    "output_dir=objective_tuning_target_load_pilot_25/results/raw/targets_5/h1/bernoulli/targets_5_dmchba_h1_bernoulli_025"
+  ],
+  "status": "PASS"
+}

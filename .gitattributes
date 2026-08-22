@@ -1,0 +1,7 @@
+* -text
+*.fig binary
+*.png binary
+*.pdf binary
+/results/**/*.csv -text
+/reference_core_benchmark_pilot/**/*.csv -text
+/scenarios/*.csv -text

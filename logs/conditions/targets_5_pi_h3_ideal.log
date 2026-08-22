@@ -1,0 +1,29 @@
+
+[2026-08-21T23:30:03+00:00] START ["C:\\Users\\lottj\\AppData\\Local\\Programs\\Python\\Python313\\python.exe", "-m", "known_visit_sim.run_trials", "--scenario-file", "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t5_n25.csv", "--algorithm", "known_visit_sim.algorithms.PI:PIAllocator", "--algorithm-name", "PI", "--grid-size", "19", "--num-robots", "4", "--robot-start-layout", "edge_even", "--condition-id", "targets_5_pi_h3_ideal", "--seed", "0", "--out-dir", "objective_tuning_target_load_pilot_25/results/raw/targets_5/h3/ideal/targets_5_pi_h3_ideal", "--max-trials", "25", "--commitment-horizon", "3", "--comm-model", "ideal", "--debug-max-events", "5000"]
+completed trial 0: targets=5/5 steps=60
+completed trial 1: targets=5/5 steps=30
+completed trial 2: targets=5/5 steps=33
+completed trial 3: targets=5/5 steps=38
+completed trial 4: targets=5/5 steps=41
+completed trial 5: targets=5/5 steps=31
+completed trial 6: targets=5/5 steps=39
+completed trial 7: targets=5/5 steps=50
+completed trial 8: targets=5/5 steps=41
+completed trial 9: targets=5/5 steps=58
+completed trial 10: targets=5/5 steps=36
+completed trial 11: targets=5/5 steps=28
+completed trial 12: targets=5/5 steps=39
+completed trial 13: targets=5/5 steps=39
+completed trial 14: targets=5/5 steps=47
+completed trial 15: targets=5/5 steps=52
+completed trial 16: targets=5/5 steps=44
+completed trial 17: targets=5/5 steps=52
+completed trial 18: targets=5/5 steps=34
+completed trial 19: targets=5/5 steps=40
+completed trial 20: targets=5/5 steps=51
+completed trial 21: targets=5/5 steps=53
+completed trial 22: targets=5/5 steps=56
+completed trial 23: targets=5/5 steps=40
+completed trial 24: targets=5/5 steps=46
+outputs written to objective_tuning_target_load_pilot_25/results/raw/targets_5/h3/ideal/targets_5_pi_h3_ideal
+[2026-08-21T23:30:06+00:00] EXIT 0

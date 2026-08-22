@@ -1,0 +1,262 @@
+[2026-08-21T23:19:15+00:00] starting 120 conditions / 3000 algorithm runs with 12 workers
+[2026-08-21T23:19:15+00:00] queued 120 non-terminal conditions; terminal conditions will be preserved
+[2026-08-21T23:19:15+00:00] monitor: 0/3000 trials, complete=0, failed-condition-records=0, partial=0, malformed=0
+[2026-08-21T23:19:15+00:00] SYSTEMIC STOP: campaign worker exception for targets_5_dmchba_h3_bernoulli_025: CampaignError('Path escapes the experiment folder: \\\\?\\C:\\Users\\lottj\\Desktop\\research\\decentralized benchmark\\dcta_benchmark_sim\\objective_tuning_target_load_pilot_25\\logs\\conditions\\targets_5_dmchba_h3_bernoulli_025.log')
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dga_h1_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dmchba_h1_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dmchba_h2_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dga_h12_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dga_h5_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dmchba_h12_bernoulli_025
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dga_h1_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dmchba_h1_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dmchba_h2_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dmchba_h8_bernoulli_025
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dga_h12_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dga_h5_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dmchba_h12_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_5_dga_h8_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_20_dga_h2_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_20_dmchba_h1_bernoulli_025
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dmchba_h8_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_20_dmchba_h2_bernoulli_025
+[2026-08-21T23:19:15+00:00] terminating active condition after systemic stop: targets_20_dga_h1_bernoulli_025
+[2026-08-21T23:19:15+00:00] condition process exited targets_5_dga_h8_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_20_dga_h2_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_20_dmchba_h1_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_20_dmchba_h2_bernoulli_025: returncode=1
+[2026-08-21T23:19:15+00:00] condition process exited targets_20_dga_h1_bernoulli_025: returncode=1
+[2026-08-21T23:20:37+00:00] starting 120 conditions / 3000 algorithm runs with 12 workers
+[2026-08-21T23:20:37+00:00] queued 120 non-terminal conditions; terminal conditions will be preserved
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h8_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h2_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h12_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h1_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h3_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] condition process exited targets_5_dmchba_h5_bernoulli_025: returncode=0
+[2026-08-21T23:20:38+00:00] minimal in-place first-output check passed: condition=targets_5_dmchba_h1_bernoulli_025; target_count=5; algorithm=DMCHBA; horizon=1; communication=bernoulli_025; required CSV columns present; output_dir=objective_tuning_target_load_pilot_25/results/raw/targets_5/h1/bernoulli/targets_5_dmchba_h1_bernoulli_025
+[2026-08-21T23:20:40+00:00] monitor: 196/3000 trials, complete=6, failed-condition-records=0, partial=2, malformed=1
+[2026-08-21T23:20:41+00:00] condition process exited targets_20_dmchba_h3_bernoulli_025: returncode=0
+[2026-08-21T23:20:41+00:00] condition process exited targets_20_dmchba_h2_bernoulli_025: returncode=0
+[2026-08-21T23:20:41+00:00] condition process exited targets_20_dmchba_h1_bernoulli_025: returncode=0
+[2026-08-21T23:20:41+00:00] monitor: 229/3000 trials, complete=9, failed-condition-records=0, partial=1, malformed=0
+[2026-08-21T23:20:42+00:00] monitor: 238/3000 trials, complete=9, failed-condition-records=0, partial=1, malformed=0
+[2026-08-21T23:20:43+00:00] condition process exited targets_20_dmchba_h5_bernoulli_025: returncode=0
+[2026-08-21T23:20:44+00:00] monitor: 250/3000 trials, complete=10, failed-condition-records=0, partial=0, malformed=0
+[2026-08-21T23:20:46+00:00] condition process exited targets_20_dmchba_h8_bernoulli_025: returncode=0
+[2026-08-21T23:20:46+00:00] monitor: 277/3000 trials, complete=11, failed-condition-records=0, partial=2, malformed=0
+[2026-08-21T23:21:01+00:00] monitor: 294/3000 trials, complete=11, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:21:17+00:00] monitor: 305/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:21:33+00:00] monitor: 322/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:21:48+00:00] monitor: 334/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:22:03+00:00] monitor: 348/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:22:18+00:00] monitor: 364/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:22:33+00:00] monitor: 378/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:22:49+00:00] monitor: 393/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:23:04+00:00] monitor: 409/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:23:19+00:00] monitor: 418/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:23:35+00:00] monitor: 440/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:23:50+00:00] monitor: 455/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:24:06+00:00] monitor: 473/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:24:22+00:00] monitor: 487/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:24:37+00:00] monitor: 503/3000 trials, complete=11, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:24:40+00:00] condition process exited targets_5_dga_h8_bernoulli_025: returncode=0
+[2026-08-21T23:24:40+00:00] monitor: 505/3000 trials, complete=12, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:24:42+00:00] condition process exited targets_5_dga_h5_bernoulli_025: returncode=0
+[2026-08-21T23:24:43+00:00] condition process exited targets_20_dmchba_h12_bernoulli_025: returncode=0
+[2026-08-21T23:24:43+00:00] monitor: 532/3000 trials, complete=14, failed-condition-records=0, partial=10, malformed=0
+[2026-08-21T23:24:44+00:00] monitor: 547/3000 trials, complete=14, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:24:44+00:00] condition process exited targets_5_dmchba_h1_ideal: returncode=0
+[2026-08-21T23:24:45+00:00] condition process exited targets_5_dga_h12_bernoulli_025: returncode=0
+[2026-08-21T23:24:45+00:00] monitor: 560/3000 trials, complete=16, failed-condition-records=0, partial=9, malformed=0
+[2026-08-21T23:24:46+00:00] condition process exited targets_5_dmchba_h2_ideal: returncode=0
+[2026-08-21T23:24:46+00:00] monitor: 586/3000 trials, complete=17, failed-condition-records=0, partial=9, malformed=0
+[2026-08-21T23:24:47+00:00] monitor: 587/3000 trials, complete=17, failed-condition-records=0, partial=9, malformed=0
+[2026-08-21T23:24:53+00:00] condition process exited targets_5_dga_h1_bernoulli_025: returncode=0
+[2026-08-21T23:24:54+00:00] monitor: 600/3000 trials, complete=18, failed-condition-records=0, partial=8, malformed=1
+[2026-08-21T23:24:54+00:00] condition process exited targets_5_dmchba_h3_ideal: returncode=0
+[2026-08-21T23:24:55+00:00] monitor: 619/3000 trials, complete=19, failed-condition-records=0, partial=9, malformed=0
+[2026-08-21T23:25:03+00:00] condition process exited targets_5_dga_h2_bernoulli_025: returncode=0
+[2026-08-21T23:25:04+00:00] condition process exited targets_5_dmchba_h5_ideal: returncode=0
+[2026-08-21T23:25:05+00:00] monitor: 652/3000 trials, complete=21, failed-condition-records=0, partial=10, malformed=0
+[2026-08-21T23:25:05+00:00] monitor: 653/3000 trials, complete=21, failed-condition-records=0, partial=10, malformed=0
+[2026-08-21T23:25:21+00:00] monitor: 667/3000 trials, complete=21, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:25:37+00:00] monitor: 684/3000 trials, complete=21, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:25:54+00:00] monitor: 701/3000 trials, complete=21, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:25:57+00:00] condition process exited targets_20_dga_h8_bernoulli_025: returncode=0
+[2026-08-21T23:25:58+00:00] monitor: 709/3000 trials, complete=22, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:25:58+00:00] condition process exited targets_5_dmchba_h8_ideal: returncode=0
+[2026-08-21T23:25:59+00:00] monitor: 731/3000 trials, complete=23, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:26:05+00:00] condition process exited targets_5_dga_h3_bernoulli_025: returncode=0
+[2026-08-21T23:26:06+00:00] monitor: 740/3000 trials, complete=24, failed-condition-records=0, partial=10, malformed=1
+[2026-08-21T23:26:06+00:00] condition process exited targets_5_dmchba_h12_ideal: returncode=0
+[2026-08-21T23:26:07+00:00] monitor: 762/3000 trials, complete=25, failed-condition-records=0, partial=10, malformed=0
+[2026-08-21T23:26:21+00:00] condition process exited targets_20_dga_h3_bernoulli_025: returncode=0
+[2026-08-21T23:26:22+00:00] monitor: 783/3000 trials, complete=26, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:26:24+00:00] condition process exited targets_20_dmchba_h1_ideal: returncode=0
+[2026-08-21T23:26:24+00:00] monitor: 806/3000 trials, complete=27, failed-condition-records=0, partial=10, malformed=0
+[2026-08-21T23:26:35+00:00] condition process exited targets_20_dga_h5_bernoulli_025: returncode=0
+[2026-08-21T23:26:36+00:00] monitor: 819/3000 trials, complete=28, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:26:37+00:00] condition process exited targets_20_dmchba_h2_ideal: returncode=0
+[2026-08-21T23:26:38+00:00] monitor: 845/3000 trials, complete=29, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:26:52+00:00] condition process exited targets_20_dga_h12_bernoulli_025: returncode=0
+[2026-08-21T23:26:53+00:00] monitor: 868/3000 trials, complete=30, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:26:54+00:00] condition process exited targets_20_dmchba_h3_ideal: returncode=0
+[2026-08-21T23:26:55+00:00] monitor: 890/3000 trials, complete=31, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:27:10+00:00] monitor: 899/3000 trials, complete=31, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:27:14+00:00] condition process exited targets_20_dga_h2_bernoulli_025: returncode=0
+[2026-08-21T23:27:14+00:00] monitor: 904/3000 trials, complete=32, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:27:16+00:00] condition process exited targets_20_dmchba_h5_ideal: returncode=0
+[2026-08-21T23:27:16+00:00] monitor: 927/3000 trials, complete=33, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:27:32+00:00] monitor: 946/3000 trials, complete=33, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:27:48+00:00] monitor: 965/3000 trials, complete=33, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:04+00:00] monitor: 979/3000 trials, complete=33, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:20+00:00] monitor: 992/3000 trials, complete=33, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:36+00:00] monitor: 1004/3000 trials, complete=33, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:46+00:00] condition process exited targets_5_dga_h3_ideal: returncode=0
+[2026-08-21T23:28:46+00:00] monitor: 1018/3000 trials, complete=34, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:48+00:00] condition process exited targets_20_dmchba_h8_ideal: returncode=0
+[2026-08-21T23:28:49+00:00] monitor: 1039/3000 trials, complete=35, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:28:56+00:00] condition process exited targets_5_dga_h2_ideal: returncode=0
+[2026-08-21T23:28:57+00:00] monitor: 1056/3000 trials, complete=36, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:28:59+00:00] condition process exited targets_20_dmchba_h12_ideal: returncode=0
+[2026-08-21T23:29:00+00:00] monitor: 1091/3000 trials, complete=37, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:29:00+00:00] condition process exited targets_5_acbba_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:02+00:00] condition process exited targets_5_hipc_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:02+00:00] monitor: 1128/3000 trials, complete=39, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:03+00:00] condition process exited targets_5_pi_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:04+00:00] monitor: 1153/3000 trials, complete=40, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:05+00:00] condition process exited targets_5_acbba_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:06+00:00] monitor: 1182/3000 trials, complete=41, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:07+00:00] condition process exited targets_5_dga_h1_ideal: returncode=0
+[2026-08-21T23:29:08+00:00] monitor: 1211/3000 trials, complete=42, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:29:08+00:00] condition process exited targets_5_hipc_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:09+00:00] condition process exited targets_5_pi_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:09+00:00] monitor: 1246/3000 trials, complete=43, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:10+00:00] condition process exited targets_5_acbba_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:12+00:00] condition process exited targets_5_hipc_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:12+00:00] monitor: 1303/3000 trials, complete=46, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:29:13+00:00] condition process exited targets_5_pi_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:14+00:00] condition process exited targets_5_acbba_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:14+00:00] monitor: 1342/3000 trials, complete=48, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:16+00:00] monitor: 1369/3000 trials, complete=48, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:17+00:00] condition process exited targets_5_hipc_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:18+00:00] monitor: 1399/3000 trials, complete=49, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:29:18+00:00] condition process exited targets_5_pi_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:18+00:00] condition process exited targets_5_acbba_h8_bernoulli_025: returncode=0
+[2026-08-21T23:29:20+00:00] monitor: 1434/3000 trials, complete=51, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:20+00:00] condition process exited targets_5_dga_h5_ideal: returncode=0
+[2026-08-21T23:29:22+00:00] condition process exited targets_5_hipc_h8_bernoulli_025: returncode=0
+[2026-08-21T23:29:22+00:00] condition process exited targets_5_acbba_h12_bernoulli_025: returncode=0
+[2026-08-21T23:29:23+00:00] condition process exited targets_5_pi_h8_bernoulli_025: returncode=0
+[2026-08-21T23:29:23+00:00] monitor: 1492/3000 trials, complete=54, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:29:25+00:00] monitor: 1552/3000 trials, complete=55, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:25+00:00] condition process exited targets_20_acbba_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:25+00:00] condition process exited targets_5_hipc_h12_bernoulli_025: returncode=0
+[2026-08-21T23:29:27+00:00] condition process exited targets_5_pi_h12_bernoulli_025: returncode=0
+[2026-08-21T23:29:28+00:00] monitor: 1605/3000 trials, complete=58, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:28+00:00] condition process exited targets_20_pi_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:29+00:00] condition process exited targets_20_hipc_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:29+00:00] condition process exited targets_20_acbba_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:31+00:00] monitor: 1686/3000 trials, complete=61, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:31+00:00] condition process exited targets_20_dga_h1_bernoulli_025: returncode=0
+[2026-08-21T23:29:32+00:00] condition process exited targets_20_pi_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:33+00:00] condition process exited targets_20_hipc_h2_bernoulli_025: returncode=0
+[2026-08-21T23:29:33+00:00] monitor: 1736/3000 trials, complete=63, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:33+00:00] condition process exited targets_20_acbba_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:36+00:00] monitor: 1777/3000 trials, complete=65, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:36+00:00] condition process exited targets_20_pi_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:37+00:00] condition process exited targets_20_hipc_h3_bernoulli_025: returncode=0
+[2026-08-21T23:29:38+00:00] monitor: 1810/3000 trials, complete=67, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:39+00:00] condition process exited targets_5_dga_h8_ideal: returncode=0
+[2026-08-21T23:29:40+00:00] condition process exited targets_20_acbba_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:40+00:00] monitor: 1843/3000 trials, complete=69, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:42+00:00] condition process exited targets_20_hipc_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:43+00:00] monitor: 1868/3000 trials, complete=70, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:46+00:00] monitor: 1893/3000 trials, complete=70, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:46+00:00] condition process exited targets_20_pi_h5_bernoulli_025: returncode=0
+[2026-08-21T23:29:48+00:00] condition process exited targets_20_acbba_h8_bernoulli_025: returncode=0
+[2026-08-21T23:29:48+00:00] monitor: 1912/3000 trials, complete=71, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:51+00:00] monitor: 1932/3000 trials, complete=72, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:29:55+00:00] condition process exited targets_20_hipc_h8_bernoulli_025: returncode=0
+[2026-08-21T23:29:57+00:00] condition process exited targets_5_acbba_h1_ideal: returncode=0
+[2026-08-21T23:29:57+00:00] monitor: 1997/3000 trials, complete=74, failed-condition-records=0, partial=11, malformed=0
+[2026-08-21T23:29:58+00:00] condition process exited targets_5_hipc_h1_ideal: returncode=0
+[2026-08-21T23:29:59+00:00] condition process exited targets_20_acbba_h12_bernoulli_025: returncode=0
+[2026-08-21T23:30:00+00:00] monitor: 2046/3000 trials, complete=76, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:30:00+00:00] condition process exited targets_20_pi_h8_bernoulli_025: returncode=0
+[2026-08-21T23:30:00+00:00] condition process exited targets_5_pi_h1_ideal: returncode=0
+[2026-08-21T23:30:01+00:00] condition process exited targets_5_acbba_h2_ideal: returncode=0
+[2026-08-21T23:30:02+00:00] condition process exited targets_5_hipc_h2_ideal: returncode=0
+[2026-08-21T23:30:03+00:00] monitor: 2161/3000 trials, complete=80, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:03+00:00] condition process exited targets_5_acbba_h3_ideal: returncode=0
+[2026-08-21T23:30:03+00:00] condition process exited targets_5_pi_h2_ideal: returncode=0
+[2026-08-21T23:30:05+00:00] condition process exited targets_5_hipc_h3_ideal: returncode=0
+[2026-08-21T23:30:06+00:00] condition process exited targets_5_acbba_h5_ideal: returncode=0
+[2026-08-21T23:30:06+00:00] condition process exited targets_20_hipc_h12_bernoulli_025: returncode=0
+[2026-08-21T23:30:06+00:00] condition process exited targets_5_pi_h3_ideal: returncode=0
+[2026-08-21T23:30:07+00:00] monitor: 2285/3000 trials, complete=86, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:30:08+00:00] condition process exited targets_5_hipc_h5_ideal: returncode=0
+[2026-08-21T23:30:08+00:00] condition process exited targets_5_acbba_h8_ideal: returncode=0
+[2026-08-21T23:30:10+00:00] condition process exited targets_5_hipc_h8_ideal: returncode=0
+[2026-08-21T23:30:11+00:00] condition process exited targets_5_pi_h5_ideal: returncode=0
+[2026-08-21T23:30:11+00:00] condition process exited targets_5_acbba_h12_ideal: returncode=0
+[2026-08-21T23:30:11+00:00] monitor: 2401/3000 trials, complete=90, failed-condition-records=0, partial=10, malformed=1
+[2026-08-21T23:30:13+00:00] condition process exited targets_5_pi_h8_ideal: returncode=0
+[2026-08-21T23:30:13+00:00] condition process exited targets_5_hipc_h12_ideal: returncode=0
+[2026-08-21T23:30:13+00:00] condition process exited targets_20_acbba_h1_ideal: returncode=0
+[2026-08-21T23:30:14+00:00] monitor: 2502/3000 trials, complete=94, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:30:15+00:00] condition process exited targets_20_pi_h12_bernoulli_025: returncode=0
+[2026-08-21T23:30:16+00:00] condition process exited targets_5_pi_h12_ideal: returncode=0
+[2026-08-21T23:30:16+00:00] condition process exited targets_20_pi_h1_ideal: returncode=0
+[2026-08-21T23:30:17+00:00] condition process exited targets_20_hipc_h1_ideal: returncode=0
+[2026-08-21T23:30:17+00:00] condition process exited targets_20_acbba_h2_ideal: returncode=0
+[2026-08-21T23:30:19+00:00] monitor: 2622/3000 trials, complete=99, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:19+00:00] condition process exited targets_20_pi_h2_ideal: returncode=0
+[2026-08-21T23:30:20+00:00] condition process exited targets_20_acbba_h3_ideal: returncode=0
+[2026-08-21T23:30:21+00:00] condition process exited targets_20_hipc_h2_ideal: returncode=0
+[2026-08-21T23:30:22+00:00] condition process exited targets_20_pi_h3_ideal: returncode=0
+[2026-08-21T23:30:22+00:00] monitor: 2704/3000 trials, complete=102, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:24+00:00] condition process exited targets_20_hipc_h3_ideal: returncode=0
+[2026-08-21T23:30:25+00:00] monitor: 2749/3000 trials, complete=104, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:26+00:00] condition process exited targets_20_acbba_h5_ideal: returncode=0
+[2026-08-21T23:30:28+00:00] monitor: 2782/3000 trials, complete=105, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:30+00:00] condition process exited targets_20_pi_h5_ideal: returncode=0
+[2026-08-21T23:30:31+00:00] condition process exited targets_20_hipc_h5_ideal: returncode=0
+[2026-08-21T23:30:32+00:00] monitor: 2820/3000 trials, complete=107, failed-condition-records=0, partial=11, malformed=1
+[2026-08-21T23:30:33+00:00] condition process exited targets_20_acbba_h8_ideal: returncode=0
+[2026-08-21T23:30:35+00:00] monitor: 2846/3000 trials, complete=108, failed-condition-records=0, partial=12, malformed=0
+[2026-08-21T23:30:42+00:00] condition process exited targets_5_dga_h12_ideal: returncode=0
+[2026-08-21T23:30:43+00:00] condition process exited targets_20_hipc_h8_ideal: returncode=0
+[2026-08-21T23:30:43+00:00] condition process exited targets_20_pi_h8_ideal: returncode=0
+[2026-08-21T23:30:44+00:00] condition process exited targets_20_acbba_h12_ideal: returncode=0
+[2026-08-21T23:30:44+00:00] monitor: 2906/3000 trials, complete=112, failed-condition-records=0, partial=8, malformed=0
+[2026-08-21T23:30:46+00:00] monitor: 2910/3000 trials, complete=112, failed-condition-records=0, partial=8, malformed=0
+[2026-08-21T23:30:52+00:00] condition process exited targets_20_hipc_h12_ideal: returncode=0
+[2026-08-21T23:30:54+00:00] monitor: 2931/3000 trials, complete=113, failed-condition-records=0, partial=7, malformed=0
+[2026-08-21T23:30:57+00:00] condition process exited targets_20_pi_h12_ideal: returncode=0
+[2026-08-21T23:30:58+00:00] monitor: 2937/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:31:13+00:00] monitor: 2943/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:31:28+00:00] monitor: 2950/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:31:45+00:00] monitor: 2956/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:32:01+00:00] monitor: 2965/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:32:16+00:00] monitor: 2971/3000 trials, complete=114, failed-condition-records=0, partial=6, malformed=0
+[2026-08-21T23:32:20+00:00] condition process exited targets_20_dga_h5_ideal: returncode=0
+[2026-08-21T23:32:21+00:00] monitor: 2973/3000 trials, complete=115, failed-condition-records=0, partial=5, malformed=0
+[2026-08-21T23:32:37+00:00] condition process exited targets_20_dga_h8_ideal: returncode=0
+[2026-08-21T23:32:38+00:00] monitor: 2979/3000 trials, complete=116, failed-condition-records=0, partial=4, malformed=0
+[2026-08-21T23:32:39+00:00] monitor: 2979/3000 trials, complete=116, failed-condition-records=0, partial=4, malformed=0
+[2026-08-21T23:32:55+00:00] monitor: 2984/3000 trials, complete=116, failed-condition-records=0, partial=4, malformed=0
+[2026-08-21T23:33:03+00:00] condition process exited targets_20_dga_h3_ideal: returncode=0
+[2026-08-21T23:33:04+00:00] monitor: 2986/3000 trials, complete=117, failed-condition-records=0, partial=3, malformed=0
+[2026-08-21T23:33:20+00:00] monitor: 2990/3000 trials, complete=117, failed-condition-records=0, partial=3, malformed=0
+[2026-08-21T23:33:24+00:00] condition process exited targets_20_dga_h2_ideal: returncode=0
+[2026-08-21T23:33:25+00:00] monitor: 2992/3000 trials, complete=118, failed-condition-records=0, partial=2, malformed=0
+[2026-08-21T23:33:40+00:00] monitor: 2994/3000 trials, complete=118, failed-condition-records=0, partial=2, malformed=0
+[2026-08-21T23:33:55+00:00] monitor: 2996/3000 trials, complete=118, failed-condition-records=0, partial=2, malformed=0
+[2026-08-21T23:34:06+00:00] condition process exited targets_20_dga_h12_ideal: returncode=0
+[2026-08-21T23:34:07+00:00] monitor: 2997/3000 trials, complete=119, failed-condition-records=0, partial=1, malformed=0
+[2026-08-21T23:34:23+00:00] monitor: 2999/3000 trials, complete=119, failed-condition-records=0, partial=1, malformed=0
+[2026-08-21T23:34:35+00:00] condition process exited targets_20_dga_h1_ideal: returncode=0
+[2026-08-21T23:34:36+00:00] monitor: 3000/3000 trials, complete=120, failed-condition-records=0, partial=0, malformed=0
+[2026-08-21T23:34:43+00:00] campaign workers settled; combined outputs and validation report were updated
