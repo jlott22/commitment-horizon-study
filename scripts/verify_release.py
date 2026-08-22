@@ -110,6 +110,42 @@ def verify_study_data() -> None:
     require("core_rows=18000" in report and "target_load_penalty_rows=30" in report,
             "Paper-figure validation is incomplete")
 
+    require(not (ROOT / "quarantine").exists(), "Quarantine directory remains after integration")
+    integrated_pilot = [item for item in pilot_system
+                        if item.get("algorithm") in {"ACBBA", "HIPC"}]
+    integrated_reference = [item for item in reference_system
+                            if item.get("algorithm") in {"ACBBA", "HIPC"}]
+    require(len(integrated_pilot) == 1200 and all(
+        item.get("stage") == "completion_retention_integrated" for item in integrated_pilot),
+        "Integrated 5/20-target ACBBA/HIPC rows are incomplete")
+    require(len(integrated_reference) == 7200 and all(
+        item.get("stage") == "completion_retention_integrated" for item in integrated_reference),
+        "Integrated 10-target ACBBA/HIPC rows are incomplete")
+
+    integrated_raw = list((ROOT / "results" / "raw").rglob("config_used.json"))
+    integrated_reference_raw = list((ROOT / "reference_core_benchmark_pilot" / "raw").rglob("config_used.json"))
+    require(sum("acbba" in path.parent.name or "hipc" in path.parent.name
+                for path in integrated_raw) == 48,
+            "Integrated 5/20-target raw condition count is not 48")
+    require(len(integrated_reference_raw) == 24,
+            "Integrated 10-target raw condition count is not 24")
+
+    archive = ROOT / "archive" / "pre_completion_retention_acbba_hipc"
+    archive_inventory = rows(archive / "SHA256.csv")
+    for item in archive_inventory:
+        path = archive / item["path"]
+        require(path.is_file(), f"Archived file missing: {item['path']}")
+        require(path.stat().st_size == int(item["size_bytes"]),
+                f"Archived size mismatch: {item['path']}")
+        require(digest(path) == item["sha256"], f"Archived hash mismatch: {item['path']}")
+    archive_pilot = rows(
+        archive / "target_load_5_20" / "combined" /
+        "target_load_horizon_pilot_25_combined_system_performance.csv")
+    archive_reference = rows(
+        archive / "reference_10" / "combined" /
+        "sensitivity_known_target_visit_horizon_300_combined_system_performance.csv")
+    require(len(archive_pilot) == 1200 and len(archive_reference) == 7200,
+            "Archived pre-integration system rows are incomplete")
 
 def main() -> int:
     parser = argparse.ArgumentParser()

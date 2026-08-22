@@ -156,6 +156,17 @@ class CommunicationAndWorldTests(unittest.TestCase):
 
 
 class AllocatorAndOutputTests(unittest.TestCase):
+    def _planned_robot(self, algorithm: str, seed: int = 31):
+        cfg = config(grid_size=7, commitment_horizon=3)
+        scenario = TrialScenario(0, [(1, 0), (2, 0), (3, 0), (4, 0), (5, 0)])
+        state = AsyncTrialRunner(
+            cfg, load_allocator_class(algorithm), IdealModel(), seed
+        ).new_trial(scenario)
+        robot = state.robots["00"]
+        robot.allocator.choose_goal(robot)
+        self.assertEqual(len(getattr(robot, f"{algorithm.lower()}_path")), 3)
+        return robot
+
     def test_all_allocators_complete_ideal_and_degraded_and_emit_only_allowed_topics(self) -> None:
         scenario = TrialScenario(0, [(2, 0), (2, 4)])
         for algorithm in ALGORITHMS:
@@ -262,6 +273,82 @@ class AllocatorAndOutputTests(unittest.TestCase):
             replanned.debug["dmchba_trigger"], "external_task_invalidated_path"
         )
         self.assertNotIn(invalidated_cell, peer_robot.dmchba_path)
+
+    def test_acbba_completion_retention_and_existing_peer_suffix_release(self) -> None:
+        local = self._planned_robot("ACBBA", 41)
+        original = list(local.acbba_path)
+        local._complete_task_locally(original[0], "local_target_visit")
+        self.assertEqual(local.acbba_path, original[1:])
+        self.assertEqual(local.acbba_bundle, original[1:])
+        self.assertTrue(all(local.acbba_winner_by_cell[cell] == local.rid for cell in original[1:]))
+        self.assertEqual(local.acbba_winner_by_cell[original[0]], local.rid)
+        local.allocator._clear_invalid_or_completed_cells(local)
+        self.assertIsNone(local.acbba_winner_by_cell[original[0]])
+
+        peer = self._planned_robot("ACBBA", 42)
+        original = list(peer.acbba_path)
+        peer._complete_task_locally(original[1], "peer_state_at_target")
+        self.assertEqual(peer.acbba_path, original)
+        peer.allocator._clear_invalid_or_completed_cells(peer)
+        self.assertEqual(peer.acbba_path, original[:1])
+        self.assertEqual(peer.acbba_bundle, original[:1])
+
+        unrelated = self._planned_robot("ACBBA", 43)
+        original = list(unrelated.acbba_path)
+        other = next(cell for cell in unrelated.active_tasks if cell not in original)
+        unrelated._complete_task_locally(other, "peer_state_at_target")
+        unrelated.allocator._clear_invalid_or_completed_cells(unrelated)
+        self.assertEqual(unrelated.acbba_path, original)
+
+    def test_acbba_consensus_loss_and_collision_still_release_suffix(self) -> None:
+        robot = self._planned_robot("ACBBA", 44)
+        original = list(robot.acbba_path)
+        robot.acbba_winner_by_cell[original[1]] = "01"
+        robot.allocator._repair_bundle_after_consensus(robot)
+        self.assertEqual(robot.acbba_path, original[:1])
+
+        robot = self._planned_robot("ACBBA", 45)
+        original = list(robot.acbba_path)
+        robot.allocator._release_own_bundle_for_replan(robot)
+        self.assertEqual(robot.acbba_path, [])
+        self.assertTrue(all(robot.acbba_winner_by_cell[cell] is None for cell in original))
+
+    def test_hipc_completion_retains_order_and_refills_only_remaining_capacity(self) -> None:
+        for reason, index in (("local_target_visit", 0), ("peer_state_at_target", 1)):
+            with self.subTest(reason=reason):
+                robot = self._planned_robot("HIPC", 51 + index)
+                original = list(robot.hipc_path)
+                completed = original[index]
+                survivors = [cell for cell in original if cell != completed]
+                robot._complete_task_locally(completed, reason)
+                self.assertEqual(robot.hipc_path, survivors)
+                self.assertTrue(robot.hipc_preserve_survivors_once)
+                self.assertTrue(all(robot.hipc_winner_by_cell[cell] == robot.rid for cell in survivors))
+                robot.allocator.choose_goal(robot)
+                self.assertEqual(robot.hipc_path[:len(survivors)], survivors)
+                self.assertLessEqual(len(robot.hipc_path), 3)
+                self.assertFalse(robot.hipc_preserve_survivors_once)
+
+        unrelated = self._planned_robot("HIPC", 54)
+        original = list(unrelated.hipc_path)
+        other = next(cell for cell in unrelated.active_tasks if cell not in original)
+        unrelated._complete_task_locally(other, "peer_state_at_target")
+        unrelated.allocator.choose_goal(unrelated)
+        self.assertEqual(unrelated.hipc_path, original)
+
+    def test_hipc_consensus_loss_and_collision_still_release_suffix(self) -> None:
+        robot = self._planned_robot("HIPC", 55)
+        original = list(robot.hipc_path)
+        robot.hipc_winner_by_cell[original[1]] = "01"
+        robot.allocator._repair_bundle_after_consensus(robot)
+        self.assertEqual(robot.hipc_path, original[:1])
+
+        robot = self._planned_robot("HIPC", 56)
+        original = list(robot.hipc_path)
+        robot.hipc_preserve_survivors_once = True
+        robot.allocator._release_own_bundle_for_replan(robot)
+        self.assertEqual(robot.hipc_path, [])
+        self.assertTrue(all(robot.hipc_winner_by_cell[cell] is None for cell in original))
 
     def test_metrics_and_all_output_files(self) -> None:
         cfg = config(condition_id="smoke")

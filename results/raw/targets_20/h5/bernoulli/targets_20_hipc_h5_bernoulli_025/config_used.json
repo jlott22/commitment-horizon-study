@@ -79,6 +79,6 @@
   "algorithm_name": "HIPC",
   "comm_model": "bernoulli",
   "comm_level": "drop_0.25",
-  "scenario_file": "objective_tuning_target_load_pilot_25/scenarios/known_visit_g19_t20_n25.csv",
+  "scenario_file": "C:\\Users\\lottj\\Desktop\\research\\decentralized benchmark\\commitment-horizon-study\\scenarios\\known_visit_g19_t20_n25.csv",
   "seed": 0
 }

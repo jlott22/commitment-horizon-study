@@ -48,6 +48,30 @@ class ACBBAAllocator(AllocatorBase):
     # Known-target ACBBA allocation
     # ------------------------------------------------------------------
 
+    def on_task_set_changed(self, robot: Any) -> bool:
+        """Retain the surviving bundle after this robot completes a task.
+
+        A peer-completion inference deliberately follows the existing CBBA
+        repair path: if the peer completed a task in our bundle, that task and
+        its dependent suffix are released on the next allocation pass.
+        """
+
+        if str(getattr(robot, "last_event", "")) != "local_target_visit":
+            return True
+
+        self._ensure_acbba_state(robot)
+        path = self._get_path(robot)
+        bundle = self._get_bundle(robot)
+        active_tasks = set(getattr(robot, "active_tasks", set()) or set())
+        completed = [cell for cell in path if cell not in active_tasks]
+        if not completed:
+            return True
+
+        completed_set = set(completed)
+        setattr(robot, "acbba_path", [cell for cell in path if cell not in completed_set])
+        setattr(robot, "acbba_bundle", [cell for cell in bundle if cell not in completed_set])
+        return True
+
     def pick_goal(self, robot: Any) -> Optional[Cell]:
         self._ensure_acbba_state(robot)
         self._clear_invalid_or_completed_cells(robot)

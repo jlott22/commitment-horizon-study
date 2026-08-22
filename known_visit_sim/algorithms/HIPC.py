@@ -76,6 +76,29 @@ class HIPCAllocator(AllocatorBase):
     # Known-target HIPC allocation
     # ------------------------------------------------------------------
 
+    def on_task_set_changed(self, robot: Any) -> bool:
+        """Remove completed tasks individually and retain the surviving plan."""
+
+        reason = str(getattr(robot, "last_event", ""))
+        if reason not in {"local_target_visit", "peer_state_at_target"}:
+            return True
+
+        self._ensure_hipc_state(robot)
+        path = self._get_path(robot)
+        bundle = self._get_bundle(robot)
+        active_tasks = set(getattr(robot, "active_tasks", set()) or set())
+        completed = [cell for cell in path if cell not in active_tasks]
+
+        if completed:
+            completed_set = set(completed)
+            setattr(robot, "hipc_path", [cell for cell in path if cell not in completed_set])
+            setattr(robot, "hipc_bundle", [cell for cell in bundle if cell not in completed_set])
+
+        # Even an unrelated peer completion should not cause HIPC to discard
+        # an otherwise valid plan merely because the candidate set changed.
+        setattr(robot, "hipc_preserve_survivors_once", True)
+        return True
+
     def pick_goal(self, robot: Any) -> Optional[Cell]:
         self._ensure_hipc_state(robot)
         self._clear_invalid_or_completed_cells(robot)
@@ -84,6 +107,7 @@ class HIPCAllocator(AllocatorBase):
         setattr(robot, "hipc_last_reallocation_trigger", trigger)
         if trigger is not None:
             self._release_own_bundle_for_replan(robot)
+            setattr(robot, "hipc_preserve_survivors_once", False)
 
         self._repair_bundle_after_consensus(robot)
 
@@ -101,11 +125,14 @@ class HIPCAllocator(AllocatorBase):
 
         self._ensure_hipc_state(robot)
 
+        rid_key = self._rid_key(robot.rid)
+        preserve_survivors = bool(getattr(robot, "hipc_preserve_survivors_once", False))
+        retained_path = self._get_path(robot) if preserve_survivors else []
         candidates = self._candidate_cells(robot)
         team_agents = self._hipc_team_agents(robot)
-        team_plan = self._run_local_team_taa(robot, team_agents, candidates)
+        seed_plan = {rid_key: retained_path} if preserve_survivors else None
+        team_plan = self._run_local_team_taa(robot, team_agents, candidates, seed_plan)
 
-        rid_key = self._rid_key(robot.rid)
         bundle_size = self._planning_horizon(robot, self.BUNDLE_SIZE)
         new_path = team_plan.get(rid_key, [])[:bundle_size]
 
@@ -118,7 +145,11 @@ class HIPCAllocator(AllocatorBase):
             if str(rid) != rid_key and path
         })
 
-        self._replace_own_bundle_if_changed(robot, new_path)
+        if preserve_survivors:
+            self._extend_retained_bundle(robot, retained_path, new_path)
+            setattr(robot, "hipc_preserve_survivors_once", False)
+        else:
+            self._replace_own_bundle_if_changed(robot, new_path)
 
     @timed_candidate_filter
     def _candidate_cells(self, robot: Any) -> List[Cell]:
@@ -181,6 +212,7 @@ class HIPCAllocator(AllocatorBase):
         robot: Any,
         team_agents: Dict[str, Cell],
         candidates: List[Cell],
+        seed_plan: Optional[Dict[str, List[Cell]]] = None,
     ) -> Dict[str, List[Cell]]:
         """
         Greedy local team-level TAA.
@@ -193,12 +225,25 @@ class HIPCAllocator(AllocatorBase):
         winner_by_cell, winning_bid_by_cell = self._consensus_maps(robot)
         team_ids = set(team_agents.keys())
 
-        plan: Dict[str, List[Cell]] = {rid: [] for rid in team_agents}
+        bundle_size = self._planning_horizon(robot, self.BUNDLE_SIZE)
+        seeds = seed_plan or {}
+        plan: Dict[str, List[Cell]] = {}
         endpoint: Dict[str, Cell] = dict(team_agents)
         assigned_cells: Set[Cell] = set()
+        for rid in team_agents:
+            seeded: List[Cell] = []
+            for cell in self._normalize_cell_list(list(seeds.get(rid, []))):
+                if len(seeded) >= bundle_size or cell in assigned_cells:
+                    continue
+                if not self._valid_task_cell(robot, cell):
+                    continue
+                seeded.append(cell)
+                assigned_cells.add(cell)
+            plan[rid] = seeded
+            if seeded:
+                endpoint[rid] = seeded[-1]
 
-        bundle_size = self._planning_horizon(robot, self.BUNDLE_SIZE)
-        max_assignments = max(1, len(team_agents) * bundle_size)
+        max_assignments = max(0, len(team_agents) * bundle_size - len(assigned_cells))
 
         for _ in range(max_assignments):
             best_rid: Optional[str] = None
@@ -243,6 +288,36 @@ class HIPCAllocator(AllocatorBase):
             assigned_cells.add(best_cell)
 
         return plan
+
+    def _extend_retained_bundle(
+        self, robot: Any, retained_path: List[Cell], proposed_path: List[Cell]
+    ) -> None:
+        """Keep survivor claims and append only newly planned tasks."""
+
+        bundle_size = self._planning_horizon(robot, self.BUNDLE_SIZE)
+        retained = self._normalize_cell_list(list(retained_path))[:bundle_size]
+        normalized = self._normalize_cell_list(list(proposed_path))[:bundle_size]
+        if normalized[:len(retained)] != retained:
+            # Seeded TAA is contractually append-only; retain safety if a future
+            # implementation violates that contract.
+            normalized = retained + [cell for cell in normalized if cell not in retained]
+            normalized = normalized[:bundle_size]
+
+        setattr(robot, "hipc_path", list(retained))
+        setattr(robot, "hipc_bundle", list(retained))
+        prefix = list(retained)
+        for cell in normalized[len(retained):]:
+            if not self._valid_task_cell(robot, cell):
+                continue
+            bid = self._append_bid_for_prefix(robot, prefix, cell)
+            if not self._can_claim(robot, cell, bid):
+                continue
+            self._insert_claim(robot, cell, len(self._get_path(robot)), bid)
+            prefix.append(cell)
+
+        if (tuple(self._get_path(robot)) != tuple(retained)
+                or bool(getattr(robot, "hipc_pending_releases", set()))):
+            setattr(robot, "hipc_pending_snapshot", True)
 
     def _better_team_choice(
         self,
@@ -695,6 +770,8 @@ class HIPCAllocator(AllocatorBase):
             setattr(robot, "hipc_last_sent_signature", None)
         if not hasattr(robot, "hipc_pending_releases"):
             setattr(robot, "hipc_pending_releases", set())
+        if not hasattr(robot, "hipc_preserve_survivors_once"):
+            setattr(robot, "hipc_preserve_survivors_once", False)
 
     def _reset_cbaa_state(self, robot: Any) -> None:
         self._reset_path_state(robot)
@@ -707,6 +784,7 @@ class HIPCAllocator(AllocatorBase):
         setattr(robot, "hipc_path", [])
         setattr(robot, "hipc_bid_counter", 0)
         setattr(robot, "hipc_pending_snapshot", False)
+        setattr(robot, "hipc_preserve_survivors_once", False)
         setattr(robot, "hipc_last_sent_signature", None)
         # Preserve prediction-quality counts across local plan resets.
         setattr(robot, "hipc_last_predicted_peer_first_task", {})
@@ -811,6 +889,10 @@ class HIPCAllocator(AllocatorBase):
         cells = set(winner_by_cell.keys()) | set(winning_bid_by_cell.keys()) | set(bid_time_by_cell.keys())
         for cell in cells:
             if not self._valid_task_cell(robot, cell):
+                if self._same_robot_id(winner_by_cell.get(cell), robot.rid):
+                    released = set(getattr(robot, "hipc_pending_releases", set()) or set())
+                    released.add(cell)
+                    setattr(robot, "hipc_pending_releases", released)
                 winner_by_cell[cell] = self.NO_WINNER
                 winning_bid_by_cell[cell] = self.NO_BID
                 bid_time_by_cell[cell] = self.NO_TIME

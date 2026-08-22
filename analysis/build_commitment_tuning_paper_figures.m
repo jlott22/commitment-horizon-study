@@ -37,7 +37,7 @@ core.value = double(core.value);
 core.trial_id = double(core.trial_id);
 validation(end+1) = sprintf('core_rows=%d', height(core));
 
-expectedEffort = [2, 1, 1, 8, 5];
+expectedEffort = [2, 1, 1, 12, 5];
 expectedMakespan = [1, 1, 1, 1, 1];
 selectedEffort = zeros(1, numel(algorithms));
 selectedMakespan = zeros(1, numel(algorithms));
@@ -87,8 +87,8 @@ assertCondition(height(penalties) == 30, sprintf('Expected 30 makespan transfer 
 validation(end+1) = sprintf('target_load_penalty_rows=%d', height(penalties));
 
 expectedPairs = [5 1; 1 1; 1 5; 5 1; 3 1; ...
-                 8 1; 1 3; 1 1; 12 2; 5 1; ...
-                 2 2; 5 5; 12 12; 8 1; 3 1];
+                 2 1; 1 3; 1 1; 12 1; 5 1; ...
+                 2 2; 5 5; 12 12; 12 1; 3 1];
 pairRow = 0;
 for t = [5, 10, 20]
     for a = 1:numel(algorithms)

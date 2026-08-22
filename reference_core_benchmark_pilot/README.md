@@ -1,17 +1,15 @@
-# Duplicated 10-target reference benchmark
+# Integrated 10-target benchmark
 
-This directory is a read-only duplicate of the exact existing 10-target
-known-target horizon benchmark used by the horizon-tuning conference pilot.
-It is included so the MATLAB analysis can run without reading or changing the
-main benchmark result tree.
+This directory contains the 10-target known-target horizon benchmark used by
+the study. ACBBA and HIPC were rerun after the completion-retention correction;
+DGA, DMCHBA, and PI retain their original results.
 
 Contents:
 
 - `known_visit_10target_300.csv` — the original 300-trial paired scenario.
-- `combined/` — the original condition manifest and trial, system, robot, and
-  target performance CSVs from
-  `results/sensitivity_known_target_visit_horizon_300/combined/`.
+- `raw/` — all 24 integrated ACBBA/HIPC condition outputs.
+- `combined/` — the integrated 60-condition trial, system, robot, and target
+  performance CSVs.
 
-The pilot analysis uses IDs 0–24 from these duplicated files. The canonical
-source files in the main benchmark repository have not been moved, removed,
-or edited.
+The MATLAB pilot analysis uses IDs 0–24. The prior ACBBA/HIPC combined rows are
+preserved under `archive/pre_completion_retention_acbba_hipc/reference_10/`.

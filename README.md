@@ -17,8 +17,9 @@ scenarios/                      paired 5- and 20-target scenario inputs
 scripts/                        campaign, smoke, and release validation tools
 results/raw/                    all 120 published condition outputs
 results/combined/               canonical 3,000-trial pilot outputs
-reference_core_benchmark_pilot/ duplicated 10-target scenario and results
+reference_core_benchmark_pilot/ 10-target scenario, integrated results, and raw reruns
 analysis/                       MATLAB analysis, tables, and figures
+archive/                        pre-fix ACBBA/HIPC rollback data and hashes
 manifests/                      historical campaign and validation provenance
 logs/                           original per-condition execution logs
 SOURCE_PROVENANCE.md            source and historical-path explanation
@@ -85,10 +86,15 @@ python scripts/run_target_load_horizon_pilot.py --workspace rerun_workspace --co
 python scripts/run_target_load_horizon_pilot.py --workspace rerun_workspace --validate-only
 ```
 
-The 10-target campaign is supplied as the read-only reference dataset used by
-the paper analysis. Its exact 300-trial scenario, 60-condition manifest,
-simulator source, algorithms, horizons, communication settings, and seed rule
-are all included for independent replication.
+The 10-target suite supplies all 300 trials used by the paper analysis. Its
+ACBBA and HIPC cells contain the completion-retention rerun; DGA, DMCHBA, and
+PI retain their original results. The exact scenario, raw replacement outputs,
+60-condition manifest, communication settings, and seed rule are included.
+
+The previous ACBBA/HIPC cells are preserved under
+`archive/pre_completion_retention_acbba_hipc/` with a separate SHA-256
+inventory, so the pre-fix state can be reconstructed without affecting the
+canonical integrated results.
 
 ## Regenerate MATLAB analysis and paper figures
 

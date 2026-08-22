@@ -1,5 +1,5 @@
 Commitment-horizon paper figure generation validation
-Generated: 2026-08-22 13:36:20
+Generated: 2026-08-22 15:19:49
 
 Input paths:
   C:\Users\lottj\Desktop\research\decentralized benchmark\commitment-horizon-study\reference_core_benchmark_pilot\combined\sensitivity_known_target_visit_horizon_300_combined_system_performance.csv
@@ -10,7 +10,7 @@ Validation checks:
   core_ACBBA: selected effort h=2; makespan h=1
   core_DGA: selected effort h=1; makespan h=1
   core_DMCHBA: selected effort h=1; makespan h=1
-  core_HIPC: selected effort h=8; makespan h=1
+  core_HIPC: selected effort h=12; makespan h=1
   core_PI: selected effort h=5; makespan h=1
   target_load_penalty_rows=30
   target_load_t=5_ACBBA: selected h=5/1
@@ -18,15 +18,15 @@ Validation checks:
   target_load_t=5_DMCHBA: selected h=1/5
   target_load_t=5_HIPC: selected h=5/1
   target_load_t=5_PI: selected h=3/1
-  target_load_t=10_ACBBA: selected h=8/1
+  target_load_t=10_ACBBA: selected h=2/1
   target_load_t=10_DGA: selected h=1/3
   target_load_t=10_DMCHBA: selected h=1/1
-  target_load_t=10_HIPC: selected h=12/2
+  target_load_t=10_HIPC: selected h=12/1
   target_load_t=10_PI: selected h=5/1
   target_load_t=20_ACBBA: selected h=2/2
   target_load_t=20_DGA: selected h=5/5
   target_load_t=20_DMCHBA: selected h=12/12
-  target_load_t=20_HIPC: selected h=8/1
+  target_load_t=20_HIPC: selected h=12/1
   target_load_t=20_PI: selected h=3/1
   cv_objective_response_surfaces_typography=all 8.0 pt
   target_load_makespan_penalty_typography=all 8.0 pt

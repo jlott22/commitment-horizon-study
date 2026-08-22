@@ -1,0 +1,31 @@
+{
+  "integrated_utc": "2026-08-22T22:17:49.181585+00:00",
+  "archived_raw_conditions": 48,
+  "integrated_raw_conditions": 72,
+  "pilot_replacement_rows": {
+    "trial_summary.csv": 1200,
+    "system_performance.csv": 1200,
+    "robot_performance.csv": 4800,
+    "target_performance.csv": 15000
+  },
+  "reference_replacement_rows": {
+    "trial_summary.csv": 7200,
+    "system_performance.csv": 7200,
+    "robot_performance.csv": 28800,
+    "target_performance.csv": 72000
+  },
+  "pilot_manifest_conditions": 48,
+  "reference_manifest_conditions": 24,
+  "validation": {
+    "target_load_horizon_pilot_25_combined_trial_summary.csv_replacement_rows": 1200,
+    "target_load_horizon_pilot_25_combined_system_performance.csv_replacement_rows": 1200,
+    "target_load_horizon_pilot_25_combined_robot_performance.csv_replacement_rows": 4800,
+    "target_load_horizon_pilot_25_combined_target_performance.csv_replacement_rows": 15000,
+    "target_load_horizon_pilot_25_combined_system_expected": 1200,
+    "sensitivity_known_target_visit_horizon_300_combined_trial_summary.csv_replacement_rows": 7200,
+    "sensitivity_known_target_visit_horizon_300_combined_system_performance.csv_replacement_rows": 7200,
+    "sensitivity_known_target_visit_horizon_300_combined_robot_performance.csv_replacement_rows": 28800,
+    "sensitivity_known_target_visit_horizon_300_combined_target_performance.csv_replacement_rows": 72000,
+    "sensitivity_known_target_visit_horizon_300_combined_system_expected": 7200
+  }
+}
