@@ -1,30 +1,30 @@
 {
-  "combined_utc": "2026-08-21T23:34:39+00:00",
+  "combined_utc": "2026-08-23T18:55:42+00:00",
   "files": {
     "condition_manifest.csv": {
-      "path": "objective_tuning_target_load_pilot_25/results/combined/target_load_horizon_pilot_25_combined_condition_manifest.csv",
-      "rows": 120,
-      "sha256": "35a74eb271021affccf2701e511005a7f1f8e7f3b32435fcfe0c2bd9da866d6c"
+      "path": "results/combined/target_load_horizon_pilot_25_combined_condition_manifest.csv",
+      "rows": 72,
+      "sha256": "5f4b19a27ed93dff221fe4cb76ec1add8b50da380d57218992be720fa10e447e"
     },
     "robot_performance.csv": {
-      "path": "objective_tuning_target_load_pilot_25/results/combined/target_load_horizon_pilot_25_combined_robot_performance.csv",
-      "rows": 12000,
-      "sha256": "a7c05705568dbae609216abcafcd3a548c63a75ffd2e7d2af0ae066369cfc6b4"
+      "path": "results/combined/target_load_horizon_pilot_25_combined_robot_performance.csv",
+      "rows": 7200,
+      "sha256": "ddabdb52796a3dabfb17adf2544e3e88857afb914d32c23e5e45eb067d8b983a"
     },
     "system_performance.csv": {
-      "path": "objective_tuning_target_load_pilot_25/results/combined/target_load_horizon_pilot_25_combined_system_performance.csv",
-      "rows": 3000,
-      "sha256": "3cba83db468d1386bc9dd457ddf986a05239df3043a8fce83672c20c2012686d"
+      "path": "results/combined/target_load_horizon_pilot_25_combined_system_performance.csv",
+      "rows": 1800,
+      "sha256": "d05e9210e2c98388d437c28f829bc99adc141da5236bb5c10008b983848aee4a"
     },
     "target_performance.csv": {
-      "path": "objective_tuning_target_load_pilot_25/results/combined/target_load_horizon_pilot_25_combined_target_performance.csv",
-      "rows": 37500,
-      "sha256": "b324efb4b59931f481a2511500ccbfd216111f257bf7f7c7f4bfaa7feefad794"
+      "path": "results/combined/target_load_horizon_pilot_25_combined_target_performance.csv",
+      "rows": 22500,
+      "sha256": "0f0435ab4279494890fd8a00ffca2ea528c19e4b97397e359e372758f3d04132"
     },
     "trial_summary.csv": {
-      "path": "objective_tuning_target_load_pilot_25/results/combined/target_load_horizon_pilot_25_combined_trial_summary.csv",
-      "rows": 3000,
-      "sha256": "3d9ef0cf804310276f75fdc79027b2939e5075776d63134d7ccd79a541f868aa"
+      "path": "results/combined/target_load_horizon_pilot_25_combined_trial_summary.csv",
+      "rows": 1800,
+      "sha256": "6255eb3dc137b8c26d2a9179c9d83442205cf47e1abab604fc6cdbd37cf0c705"
     }
   },
   "note": "Files are rebuilt atomically from raw condition outputs; failed trials are retained."

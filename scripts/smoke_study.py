@@ -14,8 +14,6 @@ ROOT = Path(__file__).resolve().parents[1]
 SCENARIO = ROOT / "scenarios" / "known_visit_g19_t5_n25.csv"
 ALGORITHMS = (
     ("ACBBA", "known_visit_sim.algorithms.ACBBA:ACBBAAllocator"),
-    ("DGA_iter_25", "known_visit_sim.algorithms.dga_iter_wrappers.DGA_iter_25:DGAIter25Allocator"),
-    ("DMCHBA", "known_visit_sim.algorithms.DMCHBA:DMCHBAAllocator"),
     ("HIPC", "known_visit_sim.algorithms.HIPC:HIPCAllocator"),
     ("PI", "known_visit_sim.algorithms.PI:PIAllocator"),
 )
@@ -53,7 +51,7 @@ def main() -> int:
                 if records[0].get("all_targets_visited", "").lower() != "true":
                     raise RuntimeError(f"{condition} did not visit every target")
                 print(f"PASS {condition}")
-    print("Smoke verification PASS: 5 allocators x 2 communication modes")
+    print("Smoke verification PASS: 3 allocators x 2 communication modes")
     return 0
 
 

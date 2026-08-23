@@ -36,7 +36,7 @@ style = loadPilotFigureStyle(repoRoot);
 targetCounts = [5, 10, 20];
 horizons = [1, 2, 3, 5, 8, 12];
 nonOneHorizons = [2, 3, 5, 8, 12];
-algorithms = ["ACBBA", "DGA", "DMCHBA", "HIPC", "PI"];
+algorithms = ["ACBBA", "HIPC", "PI"];
 commLabels = ["ideal", "bernoulli_025"];
 bootstrapIterations = 10000;
 bootstrapSeed = 20260821;
@@ -108,7 +108,7 @@ allTarget = vertcat(datasets.target);
 expectedSystemRows = numel(targetCounts) * numel(algorithms) * numel(commLabels) * numel(horizons) * 25;
 validation = addValidation(validation, "retained_system_row_count", ...
     height(allSystem) == expectedSystemRows, string(expectedSystemRows), string(height(allSystem)), ...
-    "Three target loads × five algorithms × two communications × six horizons × 25 paired trials.");
+    "Three target loads × three algorithms × two communications × six horizons × 25 paired trials.");
 validation = addValidation(validation, "retained_robot_row_count", ...
     height(allRobot) == expectedSystemRows * 4, string(expectedSystemRows * 4), string(height(allRobot)), ...
     "Four robot rows are required for every retained system trial.");
@@ -559,7 +559,7 @@ function [dataset, validation] = prepareDataset(S, R, Q, targetCount, selectFirs
     if selectFirst25
         if numel(completeIds) < 25
             error(['Existing 10-target campaign has only %d fully paired trials for the ' ...
-                'required five-algorithm, two-communication, six-horizon matrix; 25 are required.'], ...
+                'required three-algorithm, two-communication, six-horizon matrix; 25 are required.'], ...
                 numel(completeIds));
         end
         retainedIds = completeIds(1:25);
@@ -583,7 +583,8 @@ function [dataset, validation] = prepareDataset(S, R, Q, targetCount, selectFirs
     end
     scenarioFiles = unique(strtrim(S.scenario_file));
     scenarioFiles = scenarioFiles(strlength(scenarioFiles) > 0);
-    if numel(scenarioFiles) ~= 1
+    scenarioNames = unique(regexprep(scenarioFiles, '^.*[\\/]', ''));
+    if numel(scenarioNames) ~= 1
         error(['Target-count-%d does not use exactly one common scenario file across ' ...
             'algorithms, horizons, and communication conditions. Observed: %s'], ...
             targetCount, strjoin(scenarioFiles, '; '));
@@ -607,8 +608,8 @@ function [dataset, validation] = prepareDataset(S, R, Q, targetCount, selectFirs
         isempty(duplicateIds), "0 duplicate trial blocks", string(numel(duplicateIds)), ...
         "Duplicate condition/trial records are not permitted in the retained paired analysis set.");
     validation = addValidation(validation, sprintf('common_scenario_file_t%d', targetCount), ...
-        numel(scenarioFiles) == 1, "one scenario file", strjoin(scenarioFiles, '; '), ...
-        "Pairing is preserved only when every condition for a target count uses the same scenario file.");
+        numel(scenarioNames) == 1, "one canonical scenario filename", strjoin(scenarioNames, '; '), ...
+        "Historical launch prefixes may differ; every condition must use the same canonical scenario filename.");
     validation = addValidation(validation, sprintf('robot_row_completeness_t%d', targetCount), ...
         robotOk, "4 unique robot rows per system trial", robotDetail, ...
         "Active-robot and workload mechanism metrics are derived from robot-performance rows.");
@@ -916,7 +917,7 @@ function [transferTable, statisticalTable, transferSamples] = makeTransferAnalys
         "trial_makespan_penalty_pct", "trial_makespan_difference"], ...
         ["algorithm", "comm_label"], strings(1, 0));
 
-    % Holm families contain the five algorithm tests for one target count,
+    % Holm families contain the three algorithm tests for one target count,
     % communication condition, and outcome metric.
     for tc = targetCounts
         for comm = commLabels

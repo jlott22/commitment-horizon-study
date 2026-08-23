@@ -1,0 +1,186 @@
+IPCCC bundle-length figure validation
+Generated: 2026-08-23 11:58:08
+Repository HEAD: 0bb9d4fbc42a717a8c40c0ca29af547af5a77f31
+Corrected-results ancestor: 0bb9d4fbc42a717a8c40c0ca29af547af5a77f31
+
+Inputs and SHA-256:
+  C:\Users\lottj\Desktop\research\decentralized benchmark\commitment-horizon-study\reference_core_benchmark_pilot\combined\sensitivity_known_target_visit_horizon_300_combined_system_performance.csv
+  13774d579c571f3139bdd2215226cfba834aec01c3107ee01f52bd8b2bce527d
+  C:\Users\lottj\Desktop\research\decentralized benchmark\commitment-horizon-study\results\combined\target_load_horizon_pilot_25_combined_system_performance.csv
+  d05e9210e2c98388d437c28f829bc99adc141da5236bb5c10008b983848aee4a
+  prohibited archive used: no
+
+Row and pairing validation:
+  canonical rows: 10800
+  retained primary rows: 10800
+  primary cells: 36; each contains paired trial IDs 0--299
+  target-load 5/20 rows: 1800; each cell contains paired IDs 0--24
+
+Lowest-mean tested references (raw arithmetic means; ties use smaller B):
+  ACBBA MiniSum ideal: B=12 mean=65.560000000
+  ACBBA MiniSum bernoulli_025: B=2 mean=94.366666667
+  ACBBA MiniMax ideal: B=1 mean=23.410000000
+  ACBBA MiniMax bernoulli_025: B=1 mean=25.870000000
+  HIPC MiniSum ideal: B=12 mean=53.066666667
+  HIPC MiniSum bernoulli_025: B=12 mean=65.736666667
+  HIPC MiniMax ideal: B=1 mean=23.323333333
+  HIPC MiniMax bernoulli_025: B=1 mean=24.473333333
+  PI MiniSum ideal: B=12 mean=61.966666667
+  PI MiniSum bernoulli_025: B=2 mean=102.943333333
+  PI MiniMax ideal: B=1 mean=23.506666667
+  PI MiniMax bernoulli_025: B=1 mean=28.160000000
+
+All primary raw means and plotted changes:
+  ACBBA MiniSum ideal B=1 n=300 mean=80.930000000 change=0.000000000%
+  ACBBA MiniSum ideal B=2 n=300 mean=72.333333333 change=-10.622348532%
+  ACBBA MiniSum ideal B=3 n=300 mean=69.806666667 change=-13.744388154%
+  ACBBA MiniSum ideal B=5 n=300 mean=68.103333333 change=-15.849087689%
+  ACBBA MiniSum ideal B=8 n=300 mean=66.150000000 change=-18.262696157%
+  ACBBA MiniSum ideal B=12 n=300 mean=65.560000000 change=-18.991721241%
+  ACBBA MiniSum bernoulli_025 B=1 n=300 mean=96.896666667 change=0.000000000%
+  ACBBA MiniSum bernoulli_025 B=2 n=300 mean=94.366666667 change=-2.611028931%
+  ACBBA MiniSum bernoulli_025 B=3 n=300 mean=99.980000000 change=3.182084007%
+  ACBBA MiniSum bernoulli_025 B=5 n=300 mean=103.976666667 change=7.306752898%
+  ACBBA MiniSum bernoulli_025 B=8 n=300 mean=106.610000000 change=10.024424645%
+  ACBBA MiniSum bernoulli_025 B=12 n=300 mean=107.973333333 change=11.431421790%
+  ACBBA MiniMax ideal B=1 n=300 mean=23.410000000 change=0.000000000%
+  ACBBA MiniMax ideal B=2 n=300 mean=23.893333333 change=2.064644739%
+  ACBBA MiniMax ideal B=3 n=300 mean=25.430000000 change=8.628791115%
+  ACBBA MiniMax ideal B=5 n=300 mean=28.703333333 change=22.611419621%
+  ACBBA MiniMax ideal B=8 n=300 mean=32.250000000 change=37.761640325%
+  ACBBA MiniMax ideal B=12 n=300 mean=34.086666667 change=45.607290332%
+  ACBBA MiniMax bernoulli_025 B=1 n=300 mean=25.870000000 change=0.000000000%
+  ACBBA MiniMax bernoulli_025 B=2 n=300 mean=26.593333333 change=2.796031439%
+  ACBBA MiniMax bernoulli_025 B=3 n=300 mean=29.953333333 change=15.784048447%
+  ACBBA MiniMax bernoulli_025 B=5 n=300 mean=33.206666667 change=28.359747455%
+  ACBBA MiniMax bernoulli_025 B=8 n=300 mean=34.543333333 change=33.526607396%
+  ACBBA MiniMax bernoulli_025 B=12 n=300 mean=34.556666667 change=33.578147146%
+  HIPC MiniSum ideal B=1 n=300 mean=77.753333333 change=0.000000000%
+  HIPC MiniSum ideal B=2 n=300 mean=67.470000000 change=-13.225585184%
+  HIPC MiniSum ideal B=3 n=300 mean=61.523333333 change=-20.873703164%
+  HIPC MiniSum ideal B=5 n=300 mean=54.996666667 change=-29.267769871%
+  HIPC MiniSum ideal B=8 n=300 mean=54.006666667 change=-30.541027180%
+  HIPC MiniSum ideal B=12 n=300 mean=53.066666667 change=-31.749978565%
+  HIPC MiniSum bernoulli_025 B=1 n=300 mean=87.716666667 change=0.000000000%
+  HIPC MiniSum bernoulli_025 B=2 n=300 mean=78.896666667 change=-10.055101653%
+  HIPC MiniSum bernoulli_025 B=3 n=300 mean=71.543333333 change=-18.438153145%
+  HIPC MiniSum bernoulli_025 B=5 n=300 mean=66.606666667 change=-24.066121984%
+  HIPC MiniSum bernoulli_025 B=8 n=300 mean=65.810000000 change=-24.974349230%
+  HIPC MiniSum bernoulli_025 B=12 n=300 mean=65.736666667 change=-25.057951739%
+  HIPC MiniMax ideal B=1 n=300 mean=23.323333333 change=0.000000000%
+  HIPC MiniMax ideal B=2 n=300 mean=24.490000000 change=5.002143776%
+  HIPC MiniMax ideal B=3 n=300 mean=26.573333333 change=13.934543376%
+  HIPC MiniMax ideal B=5 n=300 mean=32.666666667 change=40.060025725%
+  HIPC MiniMax ideal B=8 n=300 mean=36.880000000 change=58.124910676%
+  HIPC MiniMax ideal B=12 n=300 mean=39.080000000 change=67.557524653%
+  HIPC MiniMax bernoulli_025 B=1 n=300 mean=24.473333333 change=0.000000000%
+  HIPC MiniMax bernoulli_025 B=2 n=300 mean=25.083333333 change=2.492508853%
+  HIPC MiniMax bernoulli_025 B=3 n=300 mean=27.360000000 change=11.795151185%
+  HIPC MiniMax bernoulli_025 B=5 n=300 mean=32.290000000 change=31.939526015%
+  HIPC MiniMax bernoulli_025 B=8 n=300 mean=36.096666667 change=47.493870880%
+  HIPC MiniMax bernoulli_025 B=12 n=300 mean=37.630000000 change=53.759193680%
+  PI MiniSum ideal B=1 n=300 mean=80.493333333 change=0.000000000%
+  PI MiniSum ideal B=2 n=300 mean=72.543333333 change=-9.876594335%
+  PI MiniSum ideal B=3 n=300 mean=66.330000000 change=-17.595660096%
+  PI MiniSum ideal B=5 n=300 mean=63.263333333 change=-21.405499420%
+  PI MiniSum ideal B=8 n=300 mean=62.860000000 change=-21.906576114%
+  PI MiniSum ideal B=12 n=300 mean=61.966666667 change=-23.016398874%
+  PI MiniSum bernoulli_025 B=1 n=300 mean=106.846666667 change=0.000000000%
+  PI MiniSum bernoulli_025 B=2 n=300 mean=102.943333333 change=-3.653210208%
+  PI MiniSum bernoulli_025 B=3 n=300 mean=108.193333333 change=1.260373120%
+  PI MiniSum bernoulli_025 B=5 n=300 mean=107.003333333 change=0.146627566%
+  PI MiniSum bernoulli_025 B=8 n=300 mean=110.126666667 change=3.069819679%
+  PI MiniSum bernoulli_025 B=12 n=300 mean=110.386666667 change=3.313159044%
+  PI MiniMax ideal B=1 n=300 mean=23.506666667 change=0.000000000%
+  PI MiniMax ideal B=2 n=300 mean=26.110000000 change=11.074872377%
+  PI MiniMax ideal B=3 n=300 mean=27.700000000 change=17.838910947%
+  PI MiniMax ideal B=5 n=300 mean=34.393333333 change=46.313102666%
+  PI MiniMax ideal B=8 n=300 mean=36.596666667 change=55.686330119%
+  PI MiniMax ideal B=12 n=300 mean=45.683333333 change=94.342030630%
+  PI MiniMax bernoulli_025 B=1 n=300 mean=28.160000000 change=0.000000000%
+  PI MiniMax bernoulli_025 B=2 n=300 mean=28.903333333 change=2.639678030%
+  PI MiniMax bernoulli_025 B=3 n=300 mean=33.863333333 change=20.253314394%
+  PI MiniMax bernoulli_025 B=5 n=300 mean=36.820000000 change=30.752840909%
+  PI MiniMax bernoulli_025 B=8 n=300 mean=40.256666667 change=42.956912879%
+  PI MiniMax bernoulli_025 B=12 n=300 mean=40.986666667 change=45.549242424%
+
+Ideal B=1 to B=12 response changes (percent):
+  ACBBA: MiniSum -18.991721; MiniMax 45.607290
+  HIPC: MiniSum -31.749979; MiniMax 67.557525
+  PI: MiniSum -23.016399; MiniMax 94.342031
+
+Same-B loss-versus-ideal degradation ranges (percent):
+  ACBBA MiniSum: 19.728984 to 64.693919
+  ACBBA MiniMax: 1.378838 to 17.787390
+  HIPC MiniSum: 12.814027 to 23.875628
+  HIPC MiniMax: -3.710338 to 4.930685
+  PI MiniSum: 32.739771 to 78.138784
+  PI MiniMax: -10.280919 to 22.250301
+
+Full-sample transfer estimates and paired-bootstrap intervals:
+  seed=20260822; resamples=20000
+  construction=Within each algorithm, one 300-by-20000 trial-ID index matrix was sampled with replacement and reused for paired MiniSum/MiniMax ratios.
+  ACBBA MiniSum: ideal_ref_B=12 loss_ref_B=2 cost=14.418933 CI=[11.247850, 17.688285]
+  ACBBA MiniMax: ideal_ref_B=12 loss_ref_B=2 cost=29.944848 CI=[25.610521, 34.354807]
+  HIPC MiniSum: ideal_ref_B=12 loss_ref_B=12 cost=0.000000 CI=[0.000000, 0.000000]
+  HIPC MiniMax: ideal_ref_B=12 loss_ref_B=12 cost=0.000000 CI=[0.000000, 0.000000]
+  PI MiniSum: ideal_ref_B=12 loss_ref_B=2 cost=7.230515 CI=[4.351424, 10.196665]
+  PI MiniMax: ideal_ref_B=12 loss_ref_B=2 cost=41.806020 CI=[36.938648, 46.879432]
+
+Repeated paired ten-fold cross-fit:
+  seed=20260823; repetitions=50; folds=10
+  construction=For each repetition, trial IDs 0--299 were randomly permuted once with MATLAB twister RNG, assigned round-robin to 10 folds, and kept intact across every B and network; 300 held-out predictions were aggregated before each ratio of means.
+  selection frequencies (of 500 folds):
+    ACBBA MiniSum ideal B=12: 500
+    ACBBA MiniSum bernoulli_025 B=2: 500
+    ACBBA MiniMax ideal B=1: 500
+    ACBBA MiniMax bernoulli_025 B=1: 500
+    HIPC MiniSum ideal B=12: 500
+    HIPC MiniSum bernoulli_025 B=8: 198
+    HIPC MiniSum bernoulli_025 B=12: 302
+    HIPC MiniMax ideal B=1: 500
+    HIPC MiniMax bernoulli_025 B=1: 500
+    PI MiniSum ideal B=12: 500
+    PI MiniSum bernoulli_025 B=2: 500
+    PI MiniMax ideal B=1: 500
+    PI MiniMax bernoulli_025 B=1: 500
+  held-out aggregate summaries across repetitions:
+    ACBBA MiniSum: mean_loss_at_ideal_ref=107.973333; mean_loss_at_loss_ref=94.366667; mean_cost=14.418933; repetition_CI=[14.418933, 14.418933]
+    ACBBA MiniMax: mean_loss_at_ideal_ref=25.870000; mean_loss_at_loss_ref=25.870000; mean_cost=0.000000; repetition_CI=[0.000000, 0.000000]
+    HIPC MiniSum: mean_loss_at_ideal_ref=65.736667; mean_loss_at_loss_ref=66.797667; mean_cost=-1.586452; repetition_CI=[-2.564194, -0.731129]
+    HIPC MiniMax: mean_loss_at_ideal_ref=24.473333; mean_loss_at_loss_ref=24.473333; mean_cost=0.000000; repetition_CI=[0.000000, 0.000000]
+    PI MiniSum: mean_loss_at_ideal_ref=110.386667; mean_loss_at_loss_ref=102.943333; mean_cost=7.230515; repetition_CI=[7.230515, 7.230515]
+    PI MiniMax: mean_loss_at_ideal_ref=28.160000; mean_loss_at_loss_ref=28.160000; mean_cost=0.000000; repetition_CI=[0.000000, 0.000000]
+  HIPC MiniSum: no held-out evidence that loss-conditioned retuning improves performance; the mean cost and its repetition interval are negative.
+
+Target-load reference-change audit:
+  targets=5 ACBBA MiniSum: ideal_B=5 loss_B=2 changed=1
+  targets=5 ACBBA MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=5 HIPC MiniSum: ideal_B=5 loss_B=5 changed=0
+  targets=5 HIPC MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=5 PI MiniSum: ideal_B=5 loss_B=3 changed=1
+  targets=5 PI MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=10 ACBBA MiniSum: ideal_B=12 loss_B=2 changed=1
+  targets=10 ACBBA MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=10 HIPC MiniSum: ideal_B=12 loss_B=12 changed=0
+  targets=10 HIPC MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=10 PI MiniSum: ideal_B=12 loss_B=2 changed=1
+  targets=10 PI MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=20 ACBBA MiniSum: ideal_B=12 loss_B=2 changed=1
+  targets=20 ACBBA MiniMax: ideal_B=3 loss_B=2 changed=1
+  targets=20 HIPC MiniSum: ideal_B=12 loss_B=12 changed=0
+  targets=20 HIPC MiniMax: ideal_B=1 loss_B=1 changed=0
+  targets=20 PI MiniSum: ideal_B=8 loss_B=2 changed=1
+  targets=20 PI MiniMax: ideal_B=1 loss_B=2 changed=1
+  targets=5: 2 of 6 references change
+  targets=10: 2 of 6 references change
+  targets=20: 4 of 6 references change
+  HIPC changes at no tested load. The 5- and 20-target campaigns use 25 scenarios and are descriptive robustness checks.
+  PI 20-target loss MiniMax near tie: B=2 mean 37.800000; B=1 mean 38.000000
+
+Outputs and dimensions:
+  bundle_length_response.fig/.png/.pdf: 3.45 x 5.45 in; PDF 3.458 x 5.458 in
+  communication_configuration_transfer.fig/.png/.pdf: 3.45 x 3.85 in; PDF 3.458 x 3.847 in
+  typography: 8.0 pt Helvetica throughout
+
+Warnings or discrepancies: none

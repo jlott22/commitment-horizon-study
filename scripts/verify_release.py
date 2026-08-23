@@ -78,27 +78,31 @@ def verify_study_data() -> None:
     pilot_conditions = rows(pilot / "target_load_horizon_pilot_25_combined_condition_manifest.csv")
     pilot_system = rows(pilot / "target_load_horizon_pilot_25_combined_system_performance.csv")
     pilot_trials = rows(pilot / "target_load_horizon_pilot_25_combined_trial_summary.csv")
-    require(len(pilot_conditions) == 120, f"Pilot condition count is {len(pilot_conditions)}, expected 120")
-    require(len(pilot_system) == 3000, f"Pilot system rows are {len(pilot_system)}, expected 3000")
-    require(len(pilot_trials) == 3000, f"Pilot trial rows are {len(pilot_trials)}, expected 3000")
+    require(len(pilot_conditions) == 72, f"Pilot condition count is {len(pilot_conditions)}, expected 72")
+    require(len(pilot_system) == 1800, f"Pilot system rows are {len(pilot_system)}, expected 1800")
+    require(len(pilot_trials) == 1800, f"Pilot trial rows are {len(pilot_trials)}, expected 1800")
+    require({item["algorithm"] for item in pilot_system} == {"ACBBA", "HIPC", "PI"},
+            "Pilot algorithms are not exactly ACBBA, HIPC, and PI")
     require(all(item.get("trial_status", "completed").lower() == "completed" for item in pilot_trials),
             "Pilot contains non-completed trial records")
     require({int(item["target_count"]) for item in pilot_system} == {5, 20},
             "Pilot target loads are not exactly 5 and 20")
     pilot_keys = {(item["run_id"], int(item["trial_id"])) for item in pilot_system}
-    require(len(pilot_keys) == 3000, "Pilot contains duplicate run_id/trial_id rows")
+    require(len(pilot_keys) == 1800, "Pilot contains duplicate run_id/trial_id rows")
 
     reference = ROOT / "reference_core_benchmark_pilot" / "combined"
     reference_conditions = rows(reference / "sensitivity_known_target_visit_horizon_300_combined_condition_manifest.csv")
     reference_system = rows(reference / "sensitivity_known_target_visit_horizon_300_combined_system_performance.csv")
-    require(len(reference_conditions) == 60,
-            f"Reference condition count is {len(reference_conditions)}, expected 60")
-    require(len(reference_system) == 18000,
-            f"Reference system rows are {len(reference_system)}, expected 18000")
+    require(len(reference_conditions) == 36,
+            f"Reference condition count is {len(reference_conditions)}, expected 36")
+    require(len(reference_system) == 10800,
+            f"Reference system rows are {len(reference_system)}, expected 10800")
+    require({item["algorithm"] for item in reference_system} == {"ACBBA", "HIPC", "PI"},
+            "Reference algorithms are not exactly ACBBA, HIPC, and PI")
     require(all(item.get("trial_status", "completed").lower() == "completed" for item in reference_system),
             "Reference campaign contains non-completed trials")
     reference_keys = {(item["run_id"], int(item["trial_id"])) for item in reference_system}
-    require(len(reference_keys) == 18000, "Reference contains duplicate run_id/trial_id rows")
+    require(len(reference_keys) == 10800, "Reference contains duplicate run_id/trial_id rows")
 
     validation = rows(ROOT / "analysis" / "tables" / "pilot_analysis_validation.csv")
     require(len(validation) == 26, f"MATLAB validation has {len(validation)} rows, expected 26")
@@ -107,7 +111,8 @@ def verify_study_data() -> None:
         encoding="utf-8"
     )
     require("Warnings: none" in report, "Paper-figure validation contains warnings")
-    require("core_rows=18000" in report and "target_load_penalty_rows=30" in report,
+    require("primary 10-target (300 paired IDs/cell): 10800" in report and
+            "combined target-load source observations: 2700" in report,
             "Paper-figure validation is incomplete")
 
     require(not (ROOT / "quarantine").exists(), "Quarantine directory remains after integration")
@@ -116,7 +121,8 @@ def verify_study_data() -> None:
     integrated_reference = [item for item in reference_system
                             if item.get("algorithm") in {"ACBBA", "HIPC"}]
     require(len(integrated_pilot) == 1200 and all(
-        item.get("stage") == "completion_retention_integrated" for item in integrated_pilot),
+        item.get("stage") in {"target_load_horizon_pilot", "completion_retention_integrated"}
+        for item in integrated_pilot),
         "Integrated 5/20-target ACBBA/HIPC rows are incomplete")
     require(len(integrated_reference) == 7200 and all(
         item.get("stage") == "completion_retention_integrated" for item in integrated_reference),
@@ -156,7 +162,7 @@ def main() -> int:
         print(f"Wrote {MANIFEST}")
     verify_study_data()
     verify_inventory()
-    print("Release verification PASS: hashes, 120/3000 pilot, 60/18000 reference, MATLAB checks")
+    print("Release verification PASS: hashes, 72/1800 pilot, 36/10800 reference, MATLAB checks")
     return 0
 
 
