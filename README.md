@@ -1,11 +1,11 @@
-# Commitment-Horizon Tuning Study
+# Multi-Task Plan-Depth Study
 
 This standalone repository contains the simulator, allocator implementations,
 scenarios, raw and combined results, statistical analysis, and publication
 figures for the Collaborative Visit commitment-horizon target-load study.
 
 The O-DMCHBA post-clue study is released independently at
-[`jlott22/online-dmchba-horizon-study`](https://github.com/jlott22/online-dmchba-horizon-study).
+[`jlott22/online-dmchba`](https://github.com/jlott22/online-dmchba).
 
 The study evaluates ACBBA, HIPC, and PI at commitment horizons
 `1, 2, 3, 5, 8, 12`, under ideal communication and independent 25% packet
@@ -41,8 +41,8 @@ Python 3.10 or newer is supported. The simulator uses only the standard
 library.
 
 ```bash
-git clone https://github.com/jlott22/commitment-horizon-study.git
-cd commitment-horizon-study
+git clone https://github.com/jlott22/multi-task-plan-depth-study.git
+cd multi-task-plan-depth-study
 python -m venv .venv
 # Linux/macOS: source .venv/bin/activate
 # Windows PowerShell: .venv\Scripts\Activate.ps1
